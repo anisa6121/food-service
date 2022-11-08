@@ -13,7 +13,7 @@ const Footer = () => {
 						to="/"
 						className="flex justify-center space-x-3 lg:justify-start"
 					>
-						<div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-400">
+						<div className="flex items-center justify-center w-12 h-12 rounded-full bg-violet-400">
 							<img src={logo} alt="" />
 						</div>
 						<span className="self-center text-black text-2xl font-semibold">
@@ -39,7 +39,7 @@ const Footer = () => {
 						</div>
 					</div>
 					<div className="space-y-3">
-						<h3 className="tracking-wide uppercase text-black">
+						<h3 className="tracking-wide uppercase font-bold text-black">
 							Contact
 						</h3>
 						<div className="space-y-1 text-xs font-bold text-black">
@@ -47,7 +47,12 @@ const Footer = () => {
 								Location: Shapla,
 								Sylhet:3200,
 							</p>
-							<p>Bangladesh</p>
+                            <p>Bangladesh</p>
+                            
+                            <p>Phone: 017xxxxxxxx</p>
+                            <h2>
+                                Email: example@gmail.com
+                            </h2>
 						</div>
 					</div>
 
@@ -116,7 +121,7 @@ const Footer = () => {
 				</div>
 			</div>
 
-			<div className="py-6 text-sm text-center dark:text-gray-400">
+			<div className="py-6 text-sm text-center text-white">
 				© 1968 Company Co. All rights reserved.
 			</div>
 		</footer>
