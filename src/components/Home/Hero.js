@@ -2,7 +2,7 @@ import React from 'react';
 import img from '../../assets/img.jpg'
 const Hero = () => {
     return (
-		<div className="bg-white-800 text-black-100">
+		<div className="bg-white-800 text-black-100 mb-5">
 			<div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
 				<div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
 					<h1 className="text-4xl font-bold leading-none sm:text-6xl">
