@@ -9,7 +9,7 @@ const Main = () => {
             <Header></Header>
             <Outlet></Outlet>
             <Footer></Footer>
-            <h1>This is Layout</h1>
+           
         </div>
     );
 };

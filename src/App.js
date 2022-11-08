@@ -8,12 +8,12 @@ function App() {
 
 
   return (
-		<div className="">
-		
-     <RouterProvider router={router}></RouterProvider> 
+		<div className=" max-w-screen-xl mx-auto ">
+			<RouterProvider router={router}></RouterProvider>
 		</div>
   );
 }
 
 export default App;
+
 
