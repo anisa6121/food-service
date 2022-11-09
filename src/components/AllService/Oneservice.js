@@ -19,16 +19,19 @@ const Oneservice = ({singleFood}) => {
 				</span>
 			</div>
 
-			<div className="card-actions justify-end">
+			<div>
 				{description.length > 100 ? (
 					<>
 						{description.slice(0, 100) + "..."}
-						<Link
-							className="btn btn-primary"
-							to="/detailService"
-						>
-							Details
-						</Link>
+
+						<div className="card-actions justify-end">
+							<Link
+								className="btn btn-primary"
+								to="/detailService"
+							>
+								Details
+							</Link>
+						</div>
 					</>
 				) : (
 					<>{description}</>

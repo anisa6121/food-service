@@ -25,11 +25,12 @@ setLoading(true)
 
 
     return (
-		<div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+		<div className="m-8  grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 			{allServices.map((singleFood) => (
-                <Oneservice
-                    
-                    singleFood={singleFood}></Oneservice>
+				<Oneservice
+					key={singleFood._id}
+					singleFood={singleFood}
+				></Oneservice>
 			))}
 		</div>
     );

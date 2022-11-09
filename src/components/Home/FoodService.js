@@ -37,19 +37,15 @@ const FoodService = () => {
 			<div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 				{foodServices.map((foodService) => (
 					<SingleService
+						key={foodService._id}
 						foodService={foodService}
 					></SingleService>
 				))}
 			</div>
 			<div className="card-actions justify-center">
-				<Link
-					to="/allFood"
-					
-					className="m-5 btn btn-primary"
-				>
+				<Link to="/allFood" className="m-5 btn btn-primary">
 					See Our All Services
 				</Link>
-				
 			</div>
 		</div>
     );
