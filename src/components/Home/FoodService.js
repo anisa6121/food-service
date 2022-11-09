@@ -7,11 +7,11 @@ const FoodService = () => {
 	const [foodServices, setFoodService] = useState([]);
 	
 	useEffect(() => {
-		fetch("foodservices.json")
+		fetch("http://localhost:5000/someServices")
 			.then((res) => res.json())
 			.then((data) => {
-			console.log(data)
-				setFoodService(data)
+				console.log(data);
+				setFoodService(data);
 			});
 		
 	}, []);

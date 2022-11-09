@@ -7,12 +7,12 @@ const AllService = () => {
     const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-		fetch("foodservices.json")
+		fetch("http://localhost:5000/allServices")
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
-                setAllService(data);
-               setLoading(false) 
+				setAllService(data);
+				setLoading(false);
 			});
 setLoading(true)
 	}, []);
