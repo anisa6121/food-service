@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import SingleService from './SingleService';
 
 const FoodService = () => {
@@ -27,19 +28,28 @@ const FoodService = () => {
 						will deliver
 					</span>
 				</h2>
-				<p className='text-xl'>
+				<p className="text-xl">
 					We will deliver your food within hours of
 					ordering.
 				</p>
 			</div>
 
 			<div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                {
-                    foodServices.map(foodService => <SingleService
-                    
-                    foodService ={foodService}
-                    ></SingleService>)    
-            }
+				{foodServices.map((foodService) => (
+					<SingleService
+						foodService={foodService}
+					></SingleService>
+				))}
+			</div>
+			<div className="card-actions justify-center">
+				<Link
+					to="/allFood"
+					
+					className="m-5 btn btn-primary"
+				>
+					See Our All Services
+				</Link>
+				
 			</div>
 		</div>
     );

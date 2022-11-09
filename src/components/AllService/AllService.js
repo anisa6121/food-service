@@ -4,17 +4,24 @@ import Oneservice from './Oneservice';
 
 const AllService = () => {
     const [allServices, setAllService] = useState([]);
-    
+    const [loading, setLoading] = useState(false);
+
 	useEffect(() => {
 		fetch("foodservices.json")
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
-				setAllService(data);
+                setAllService(data);
+               setLoading(false) 
 			});
+setLoading(true)
 	}, []);
 
-
+ if (loading) {
+		return (
+			<div className="w-16 mx-auto m-6 h-16 border-4 border-dashed rounded-full animate-spin border-violet-400"></div>
+		);
+ } 
 
 
     return (
