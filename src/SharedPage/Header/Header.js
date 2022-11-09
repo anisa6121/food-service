@@ -113,17 +113,15 @@ const Header = () => {
 						</li>
 
 						<li>
-							<a
-								href="/"
-								// classNameName="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-purple-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-								// aria-label="Sign up"
-								// title="Sign up"
+							<Link
+								to="/register"
+								
 								className="btn btn-outline btn-error"
 								aria-label="Register"
 								title="Register"
 							>
 								Register
-							</a>
+							</Link>
 						</li>
 					</ul>
 
