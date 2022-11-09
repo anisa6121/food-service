@@ -1,8 +1,50 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Registration = () => {
     const [error, setError] = useState("");
+
+const { createUser, updateUserProfile } = useContext(AuthContext);
+
+const handleSubmit = (event) => {
+	event.preventDefault();
+
+	const form = event.target;
+	const name = form.name.value;
+	const photoURL = form.photoURL.value;
+	const email = form.email.value;
+	const password = form.password.value;
+
+    console.log(name, photoURL, email, password);
+    
+	createUser(email, password)
+		.then((result) => {
+            const user = result.user;
+            
+			console.log(user);
+
+			setError("");
+			form.reset();
+			handleUserProfile(name, photoURL);
+		})
+
+		.catch((error) => {
+			console.log(error);
+			setError(error.message);
+		});
+};
+
+	const handleUserProfile = (name, photoURL) => {
+		const profile = {
+			displayName: name,
+			photoURL: photoURL,
+		};
+		updateUserProfile(profile)
+			.then(() => {})
+			.catch((e) => console.error(e));
+	};
+
     return (
 		<div className="mx-auto mt-3 mb-3 flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-200 text-black">
 			<div className="mb-8 text-center">
@@ -12,7 +54,7 @@ const Registration = () => {
 			</div>
 
 			<form
-				// onSubmit={handleSubmit}
+				onSubmit={handleSubmit}
 				noValidate=""
 				action=""
 				className="space-y-12 ng-untouched ng-pristine ng-valid"
@@ -106,14 +148,14 @@ const Registration = () => {
 					</p>
 
 					<Link
-						className="text-xs hover:underline"
+						className="text-xl hover:underline"
 						to="/login"
 					>
 						Login
 					</Link>
 				</div>
 			</form>
-			<p className="text-lg  text-white-700">{error}</p>
+			<p className="text-lg font-bold text-red-500">{error}</p>
 		</div>
     );
 };

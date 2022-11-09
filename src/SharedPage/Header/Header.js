@@ -98,18 +98,16 @@ const Header = () => {
 						</li>
 
 						<li>
-							<a
-								href="/"
-								// className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-purple-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-								// aria-label="Sign up"
-								// title="Sign up"
+							<Link
+								to="/login"
+								
 
 								className="btn btn-outline  btn-accent"
 								aria-label="Log In"
 								title="Log In"
 							>
 								Log In
-							</a>
+							</Link>
 						</li>
 
 						<li>
