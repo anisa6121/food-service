@@ -15,7 +15,7 @@ const Slider = () => {
 				/>
 
 				<div className="absolute flex justify-center w-full transform -translate-y-1/2 top-3/4">
-					<div className="p-4 text-center text-5xl text-lime-400 font-bold">
+					<div className="p-4 text-center lg:text-5xl md:text-5xl sm:text-4xl text-lime-400 font-bold">
 						Our Special Dish
 						<br />
 						<p className="text-blue-700 text-3xl mt-7">
@@ -41,7 +41,7 @@ const Slider = () => {
 				/>
 
 				<div className="absolute flex justify-center w-full transform -translate-y-1/2 top-3/4">
-					<div className="p-4 text-center text-5xl text-lime-400 font-bold">
+					<div className="p-4 text-center lg:text-5xl md:text-5xl sm:text-4xl  text-lime-400 font-bold">
 						Our Special Dish
 						<br />
 						<p className="text-blue-700 text-3xl mt-7">
@@ -67,11 +67,11 @@ const Slider = () => {
 				/>
 
 				<div className="absolute flex justify-center w-full transform -translate-y-1/2 top-3/4">
-					<div className="p-4 text-center text-5xl text-lime-400 font-bold">
+					<div className="p-4 text-center lg:text-5xl md:text-5xl sm:text-4xl  text-lime-400 font-bold">
 						Our Special Dish
 						<br />
 						<p className="text-blue-700 text-3xl mt-7">
-						Chiken Kabab
+							Chiken Kabab
 						</p>
 					</div>
 				</div>

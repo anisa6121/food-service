@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from '../Slider/Slider';
+import FoodService from './FoodService';
 import Hero from './Hero';
 import Section from './Section';
 
@@ -8,6 +9,7 @@ const Home = () => {
         <div className=''>
             <Hero></Hero>
             <Slider></Slider>
+            <FoodService></FoodService>
             <Section></Section>
         </div>
     );

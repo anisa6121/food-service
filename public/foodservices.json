@@ -1,0 +1,53 @@
+[
+    {
+        "title": "Kala Bhuna",
+        "img": "https://i.pinimg.com/originals/c1/cf/80/c1cf80d2b3220b16507c033f84f4cd1c.jpg",
+        "price": "175",
+         "description": "Kala Bhuna (Bengali: কালা ভুনা, Chittagonian: হালা ভুনো, romanized: Hala Bhuno) is a famous dark and tender dish native to Chittagong prepared with shoulder pieces of beef and traditional spices; usually served during Mezban.It was originally served during the early 17th century. However, the origin of the dish is unknown.Bhuna (Chittagonian) means deep-frying; derived from Bhunna (Urdu) meaning to be fried and the word Kala means dark or black in Chittagonian.Natives of Chittagong used to cover their fried dark and tendered beef dish using banana leaves and packed it for long tours on foot, nowadays aluminium foil is used instead of the traditional banana leaf. The first major innovation that led to what is now known as kala-bhuna was the use of special spices and the long frying technique."
+    },
+
+    {
+      "title": "Mezbani Beef",
+        "img": "https://1.bp.blogspot.com/-IRiYpEDnnYU/WgH6EZzLY9I/AAAAAAAAAJM/Xgh4qnsFJKA5ddG0HFLPXmEA-N4_DGmWgCLcBGAs/s1600/maxresdefault.jpg",
+        "price": "140",
+         "description": "Chittagong is the second most important place in Bangladesh after the capital Dhaka . Apart from it’s geo political importance , scenic beauty, it is world famous for it’s mezbani beef curry . If asked, what Chittagong is famous for , the first thing that would pop into  is “mezbani gorur mangsho” or “Mezbani beef”.Mezbani is one of the traditions of Chittagong . “Mezban” is a Persian word which means host . Mezbani means a grand feast arranged by the host to entartain the whole community . So it is kind of community feasting arranged for some special occassions like Eid E Miladunnabbi , wedding , birth celebration or even death aaniversary . Per plate mezbani beef price 140 taka."    
+    },
+
+    {
+       "title": "Chiken Roast",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSst3jLkPdijOVAhVl48gJdRmkTFGrNHDXRHQ&usqp=CAU",
+        "price": "160",
+         "description": "“Biye barir chicken roast”, meaning chicken roast served at wedding, is a specialty that is omnipresent and the most sought after menu item in Bangladeshi weddings. In Bangladesh, chicken roast is a very popular item to prepare and serve during weddings, Eid and other exclusive occasions. Bangladeshi chicken roast is yet another Mughlai dish with creamy rich flavor coming from the use of yogurt, onion and some nutty ingredients. It’s best served with parathas, Naans or special pilaf rice. Per pice roast price 160 taka."    
+    },
+    {
+       "title": "Pizza",
+        "img": "https://st.depositphotos.com/1003814/5052/i/950/depositphotos_50523105-stock-photo-pizza-with-tomatoes.jpg",
+        "price": "360",
+         "description": "Pizza (Italian: [ˈpittsa], Neapolitan: [ˈpittsə]) is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients (such as various types of sausage, anchovies, mushrooms, onions, olives, vegetables, meat, ham, etc.), which is then baked at a high temperature, traditionally in a wood-fired oven.[1] A small pizza is sometimes called a pizzetta.We serve salad and sauce Pizza. "    
+    },
+    {
+        "title": "Kabuli Pulao",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY76Ruyb_snN-VzMiSKAuDXLOAIiU75spaaw&usqp=CAU",
+        "price": "250",
+         "description": "Kabuli Pulao or Afghani Pulao is a savory Central Asian dish that has many variations. The combination of textures, colors and nutritional value make this a popular dish that can be had as a complete meal. This ethereal mixture of rice and chicken, redolent of sweet and warming spices, is the national dish of Afghanistan. Kabuli pulao takes its name from Kabul. Kabuli pulao is special occasion food in Afghanistan. 'Pulao' is a type of rice dish made with a special, two-stepped cooking process. Specially use for this dish Kashmiri Mirch, Chef special Kabuli Masala, Mustard Oil, Pudina leaves & different types of spices.  Per plate Kabuli Pulao price 240 taka. We serve salad and sauce with this item." 
+    },
+    {
+          "title": "Beef Briyani",
+        "img": "https://img-global.cpcdn.com/recipes/20324a395a0295e5/1200x630cq70/photo.jpg",
+        "price": "240",
+         "description": "Biryani  is a mixed rice dish originating among the Muslims of the Indian subcontinent. It is made with Indian spices, rice, and usually some type of meat (chicken, beef, goat, lamb, prawn, fish) or in some cases without any meat, and sometimes, in addition, eggs and potatoes.Biryani is one of the most popular dishes in South Asia, as well as among the diaspora from the region. Per plate beef briyani price 240 taka. We serve salad and sauce with biryani. "   
+    },
+    {
+          "title": "Chiken Biryani",
+        "img": "https://assets.limetray.com/assets/image_manager/uploads/5128/Malamal%20Chicken%20Biryani%20(2).jpg",
+        "price": "180",
+         "description": "BBK's Malamaal Murg Biryani has been specially made for those who love to have chicken in every spoon of their biryani. The Equal amount of rice and chicken is used to ensure that you get juicy chicken on every bite. This dish consists of freshly marinated boneless chicken pieces, special spices from Kerala & Daawat basmati rice which are cooked in 'dum' style in a handi. Order this amazing boneless chicken biryani online and get home delivery. Per plate Chike biryani price 180 taka. We serve salad and sauce with biryani. "   
+    },
+
+    {
+       "title": "Kabab",
+        "img": "https://www.ndtv.com/cooks/images/seekh-kebab-620.jpg",
+        "price": "80",
+         "description": " An Indian party's snack platter is incomplete without this delicious appetizer dish of seekh kabab. Succulent kebabs made with minced lamb, marinated in variety of spices, grilled on a tandoor/oven and served with green chutney. Full of juice and flavor, these kabab recipe is perfect as a starter for any dinner party. Served with mint chutney and a side of onion rings and lemon wedges, you won't need anything else to kick start the party!. Per pice Kabab price 80 taka.  "    
+    }
+]
