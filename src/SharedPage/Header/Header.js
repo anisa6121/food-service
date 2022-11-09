@@ -7,7 +7,12 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { logOut , user} = useContext(AuthContext)
-    
+   
+    const handleLogOut = () => {
+		logOut()
+			.then(() => {})
+			.catch((error) => console.log(error));
+    };
 
 
     
@@ -49,6 +54,7 @@ const Header = () => {
 								Home
 							</NavLink>
 						</li>
+
 						<li>
 							<NavLink
 								to="/about"
@@ -83,71 +89,84 @@ const Header = () => {
 							</NavLink>
 						</li>
 
-						<li>
-							<NavLink
-								to="/review"
-								aria-label="Review"
-								title="All Reviews"
-								className={({
-									isActive,
-								}) =>
-									isActive
-										? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
-										: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
-								}
-							>
-								My Reviews
-							</NavLink>
-						</li>
+						
+							{user?.email ? (
+								<>
+									<li>
+										<NavLink
+											to="/review"
+											aria-label="Review"
+											title="All Reviews"
+											className={({
+												isActive,
+											}) =>
+												isActive
+													? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
+													: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
+											}
+										>
+											My
+											Reviews
+										</NavLink>
+									</li>
 
-						<li>
-							<NavLink
-								to="/service"
-								aria-label="Service"
-								title="Add Service"
-								className={({
-									isActive,
-								}) =>
-									isActive
-										? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
-										: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
-								}
-							>
-								Add Service
-							</NavLink>
-						</li>
+									<li>
+										<NavLink
+											to="/service"
+											aria-label="Service"
+											title="Add Service"
+											className={({
+												isActive,
+											}) =>
+												isActive
+													? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
+													: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
+											}
+										>
+											Add
+											Service
+										</NavLink>
+									</li>
 
-						<li>
-							<Link
-								to="/login"
-								className="btn btn-outline  btn-accent"
-								aria-label="Log In"
-								title="Log In"
-							>
-								Log In
-							</Link>
-						</li>
+									<li>
+                                    <Link
+                                        onClick={handleLogOut}
+											className="btn  btn-active  btn-warning"
+											aria-label="Log Out"
+											title="Log Out"
+										>
+											Log
+											Out
+										</Link>
+									</li>
+								</>
+							) : (
+								<>
+									<li>
+										<Link
+											to="/login"
+											className="btn btn-outline  btn-accent"
+											aria-label="Log In"
+											title="Log In"
+										>
+											Log
+											In
+										</Link>
+									</li>
 
-						<li>
-							<Link
-								to="/register"
-								className="btn btn-outline btn-error"
-								aria-label="Register"
-								title="Register"
-							>
-								Register
-							</Link>
-						</li>
-
-						<li>
-							<Link
-								className="btn  btn-active  btn-warning"
-								aria-label="Log Out"
-								title="Log Out"
-							>
-								Log Out
-							</Link>
-						</li>
+									<li>
+										<Link
+											to="/register"
+											className="btn btn-outline btn-error"
+											aria-label="Register"
+											title="Register"
+										>
+											Register
+										</Link>
+									</li>
+								</>
+							)}
+						
 					</ul>
 
 					<div className="lg:hidden">
