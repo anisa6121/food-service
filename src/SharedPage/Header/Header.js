@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import logo from '../../assets/logo.png'
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { logOut , user} = useContext(AuthContext)
+    
 
 
     
@@ -46,16 +49,21 @@ const Header = () => {
 								Home
 							</NavLink>
 						</li>
-
 						<li>
-							<a
-								href="/"
-								aria-label="Our product"
-								title="Our product"
-								className="font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
+							<NavLink
+								to="/about"
+								aria-label="About"
+								title="About Us"
+								className={({
+									isActive,
+								}) =>
+									isActive
+										? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
+										: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
+								}
 							>
-								Features
-							</a>
+								About Us
+							</NavLink>
 						</li>
 
 						<li>
@@ -76,32 +84,42 @@ const Header = () => {
 						</li>
 
 						<li>
-							<a
-								href="/"
-								aria-label="About us"
-								title="About us"
-								className="font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
+							<NavLink
+								to="/review"
+								aria-label="Review"
+								title="All Reviews"
+								className={({
+									isActive,
+								}) =>
+									isActive
+										? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
+										: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
+								}
 							>
-								About us
-							</a>
+								My Reviews
+							</NavLink>
 						</li>
 
 						<li>
-							<a
-								href="/"
-								className="btn  btn-active  btn-warning"
-								aria-label="Register"
-								title="Register"
+							<NavLink
+								to="/service"
+								aria-label="Service"
+								title="Add Service"
+								className={({
+									isActive,
+								}) =>
+									isActive
+										? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
+										: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
+								}
 							>
-								Log Out
-							</a>
+								Add Service
+							</NavLink>
 						</li>
 
 						<li>
 							<Link
 								to="/login"
-								
-
 								className="btn btn-outline  btn-accent"
 								aria-label="Log In"
 								title="Log In"
@@ -113,12 +131,21 @@ const Header = () => {
 						<li>
 							<Link
 								to="/register"
-								
 								className="btn btn-outline btn-error"
 								aria-label="Register"
 								title="Register"
 							>
 								Register
+							</Link>
+						</li>
+
+						<li>
+							<Link
+								className="btn  btn-active  btn-warning"
+								aria-label="Log Out"
+								title="Log Out"
+							>
+								Log Out
 							</Link>
 						</li>
 					</ul>
@@ -155,7 +182,6 @@ const Header = () => {
 								<div className="p-5 bg-white border rounded shadow-sm">
 									<div className="flex items-center justify-between mb-4">
 										<div>
-											
 											<Link
 												to="/"
 												aria-label="Food Service"
