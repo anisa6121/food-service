@@ -89,84 +89,81 @@ const Header = () => {
 							</NavLink>
 						</li>
 
-						
-							{user?.email ? (
-								<>
-									<li>
-										<NavLink
-											to="/review"
-											aria-label="Review"
-											title="All Reviews"
-											className={({
-												isActive,
-											}) =>
-												isActive
-													? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
-													: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
-											}
-										>
-											My
-											Reviews
-										</NavLink>
-									</li>
+						{user?.email ? (
+							<>
+								<li>
+									<NavLink
+										to="/review"
+										aria-label="Review"
+										title="All Reviews"
+										className={({
+											isActive,
+										}) =>
+											isActive
+												? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
+												: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
+										}
+									>
+										My Reviews
+									</NavLink>
+								</li>
 
-									<li>
-										<NavLink
-											to="/service"
-											aria-label="Service"
-											title="Add Service"
-											className={({
-												isActive,
-											}) =>
-												isActive
-													? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
-													: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
-											}
-										>
-											Add
-											Service
-										</NavLink>
-									</li>
+								<li>
+									<NavLink
+										to="/service"
+										aria-label="Service"
+										title="Add Service"
+										className={({
+											isActive,
+										}) =>
+											isActive
+												? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
+												: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
+										}
+									>
+										Add
+										Service
+									</NavLink>
+								</li>
 
-									<li>
-                                    <Link
-                                        onClick={handleLogOut}
-											className="btn  btn-active  btn-warning"
-											aria-label="Log Out"
-											title="Log Out"
-										>
-											Log
-											Out
-										</Link>
-									</li>
-								</>
-							) : (
-								<>
-									<li>
-										<Link
-											to="/login"
-											className="btn btn-outline  btn-accent"
-											aria-label="Log In"
-											title="Log In"
-										>
-											Log
-											In
-										</Link>
-									</li>
+								<li>
+									<Link
+										onClick={
+											handleLogOut
+										}
+										className="btn  btn-active  btn-warning"
+										aria-label="Log Out"
+										title="Log Out"
+									>
+										Log Out
+									</Link>
+								</li>
+							</>
+						) : (
+							<>
+								<li>
+									<Link
+										to="/login"
+										className="btn btn-outline  btn-accent"
+										aria-label="Log In"
+										title="Log In"
+									>
+										Log In
+									</Link>
+								</li>
 
-									<li>
-										<Link
-											to="/register"
-											className="btn btn-outline btn-error"
-											aria-label="Register"
-											title="Register"
-										>
-											Register
-										</Link>
-									</li>
-								</>
-							)}
-						
+								<li>
+									<Link
+										to="/register"
+										className="btn btn-outline btn-error"
+										aria-label="Register"
+										title="Register"
+									>
+										Register
+									</Link>
+								</li>
+							</>
+						)}
 					</ul>
 
 					<div className="lg:hidden">
@@ -247,75 +244,135 @@ const Header = () => {
 									<nav>
 										<ul className="space-y-4">
 											<li>
-												<a
-													href="/"
-													aria-label="Our product"
-													title="Our product"
-													className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+												<NavLink
+													to="/home"
+													aria-label="Home"
+													title="Home"
+													className={({
+														isActive,
+													}) =>
+														isActive
+															? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
+															: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
+													}
 												>
-													Product
-												</a>
+													Home
+												</NavLink>
 											</li>
+
 											<li>
-												<a
-													href="/"
-													aria-label="Our product"
-													title="Our product"
-													className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-												>
-													Features
-												</a>
-											</li>
-											<li>
-												<a
-													href="/"
-													aria-label="Product pricing"
-													title="Product pricing"
-													className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-												>
-													Pricing
-												</a>
-											</li>
-											<li>
-												<a
-													href="/"
-													aria-label="About us"
-													title="About us"
-													className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+												<NavLink
+													to="/about"
+													aria-label="About"
+													title="About Us"
+													className={({
+														isActive,
+													}) =>
+														isActive
+															? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
+															: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
+													}
 												>
 													About
-													us
-												</a>
-											</li>
-											<li>
-												<a
-													href="/"
-													// className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-													// aria-label="Sign up"
-													// title="Sign up"
-
-													className="btn btn-outline  btn-accent"
-													aria-label="Log In"
-													title="Log In"
-												>
-													Sign
-													up
-												</a>
+													Us
+												</NavLink>
 											</li>
 
 											<li>
-												<a
-													href="/"
-													// className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-													// aria-label="Sign up"
-													// title="Sign up"
-													className="btn btn-outline btn-error"
-													aria-label="Register"
-													title="Register"
+												<NavLink
+													to="/blog"
+													aria-label="Blog"
+													title="Blog"
+													className={({
+														isActive,
+													}) =>
+														isActive
+															? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
+															: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
+													}
 												>
-													Register
-												</a>
+													Blog
+												</NavLink>
 											</li>
+
+											{user?.email ? (
+												<>
+													<li>
+														<NavLink
+															to="/review"
+															aria-label="Review"
+															title="All Reviews"
+															className={({
+																isActive,
+															}) =>
+																isActive
+																	? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
+																	: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
+															}
+														>
+															My
+															Reviews
+														</NavLink>
+													</li>
+
+													<li>
+														<NavLink
+															to="/service"
+															aria-label="Service"
+															title="Add Service"
+															className={({
+																isActive,
+															}) =>
+																isActive
+																	? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
+																	: "font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
+															}
+														>
+															Add
+															Service
+														</NavLink>
+													</li>
+
+													<li>
+														<Link
+															onClick={
+																handleLogOut
+															}
+															className="btn  btn-active  btn-warning"
+															aria-label="Log Out"
+															title="Log Out"
+														>
+															Log
+															Out
+														</Link>
+													</li>
+												</>
+											) : (
+												<>
+													<li>
+														<Link
+															to="/login"
+															className="btn btn-outline  btn-accent"
+															aria-label="Log In"
+															title="Log In"
+														>
+															Log
+															In
+														</Link>
+													</li>
+
+													<li>
+														<Link
+															to="/register"
+															className="btn btn-outline btn-error"
+															aria-label="Register"
+															title="Register"
+														>
+															Register
+														</Link>
+													</li>
+												</>
+											)}
 										</ul>
 									</nav>
 								</div>
