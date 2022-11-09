@@ -12,7 +12,7 @@ const FoodService = () => {
 			console.log(data)
 				setFoodService(data)
 			});
-		// setLoading(true);
+		
 	}, []);
 
     return (

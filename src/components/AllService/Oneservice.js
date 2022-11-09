@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SingleService = ({ foodService }) => {
-
-    const { title, price, img, description } = foodService;
-	return (
+const Oneservice = ({singleFood}) => {
+     const { title, price, img, description } = singleFood; ;
+     return (
 		<div className=" p-6 rounded-md shadow-md bg-white text-black">
 			<img
 				src={img}
@@ -36,7 +35,7 @@ const SingleService = ({ foodService }) => {
 				)}
 			</div>
 		</div>
-	);
+     );
 };
 
-export default SingleService;
+export default Oneservice;
