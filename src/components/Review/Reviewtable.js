@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
-const Reviewtable = ({ oneReview }) => {
+const Reviewtable = ({ oneReview, handleDelete }) => {
+	const { serviceName, review, Price, serviceId, _id } = oneReview;
 
-    const { serviceName, review, Price, serviceId } = oneReview;
-
-const [reviewService, setReviewService] = useState({})
-    useEffect(() => {
-
-        fetch(`http://localhost:5000/allServices/${serviceId}`)
-
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            setReviewService(data)
-        })
-    }, [serviceId]);
+	const [reviewService, setReviewService] = useState({});
+	useEffect(() => {
+		fetch(`http://localhost:5000/allServices/${serviceId}`)
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				setReviewService(data);
+			});
+	}, [serviceId]);
 
 	return (
 		<tr>
@@ -43,7 +40,7 @@ const [reviewService, setReviewService] = useState({})
 			<th>
 				<label>
 					<button
-						// onClick={() => handleDelete(_id)}
+						onClick={() => handleDelete(_id)}
 						className="btn  btn-error"
 					>
 						X

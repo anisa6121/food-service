@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import Reviewtable from './Reviewtable';
 
@@ -28,12 +29,38 @@ const Review = () => {
 		
      }
     
-  
+  const handleDelete = (id) => {
+		const proceed = window.confirm(
+			"Are you sure, you want to cancel this order"
+		);
+		if (proceed) {
+			fetch(`http://localhost:5000/allReviews/${id}`, {
+				method: "DELETE",
+
+				// headers: {
+				// 	authorization: `Bearer ${localStorage.getItem(
+				// 		"geniousToken"
+				// 	)}`,
+				// },
+			})
+				.then((res) => res.json())
+				.then((data) => {
+					console.log(data);
+
+					if (data.deletedCount > 0) {
+						toast.success("deleted successfully");
+						const remaining = review.filter(
+							(comment) => comment._id !== id
+						);
+						setReview(remaining);
+					}
+				});
+		}
+  };
 	
 
     return (
 		<div>
-            
 			<div className="overflow-x-auto w-full mb-24 ">
 				<table className="table w-full">
 					<thead>
@@ -51,6 +78,7 @@ const Review = () => {
 					<tbody>
 						{review.map((oneReview) => (
 							<Reviewtable
+						handleDelete={handleDelete}
 								key={oneReview._id}
 								oneReview={oneReview}
 							></Reviewtable>
