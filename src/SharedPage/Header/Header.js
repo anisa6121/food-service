@@ -131,6 +131,7 @@ const Header = () => {
 										onClick={
 											handleLogOut
 										}
+										to='/'
 										className="btn  btn-active  btn-warning"
 										aria-label="Log Out"
 										title="Log Out"

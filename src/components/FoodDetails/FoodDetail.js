@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const FoodDetail = () => {
 
 	const { user } = useContext(AuthContext);
 
+	const navigate = useNavigate()
 	const foodService = useLoaderData();
 	console.log(foodService)
 	const {img, title ,price, description, _id} = foodService;
@@ -45,12 +46,13 @@ const FoodDetail = () => {
   if (data.acknowledged) {
 	  toast.success("Review Added ");
 	  form.reset()
+	  navigate('/allFood')
 		console.log(data);
 		
   }
 
-			})
-			.catch((err) => console.log(err));
+	})
+	.catch((err) => console.log(err));
 		
 }
 
@@ -121,9 +123,9 @@ const FoodDetail = () => {
 
 								<div className="space-y-2">
 									<div>
-										<button
-											type="submit"
-											className="text-xl w-1/2 px-8 py-3 font-semibold rounded-md bg-blue-500 text-white"
+							<button
+						type="submit"
+						className="text-xl w-1/2 px-8 py-3 font-semibold rounded-md bg-blue-500 text-white"
 										>
 											Add
 										</button>

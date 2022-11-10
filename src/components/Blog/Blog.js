@@ -87,7 +87,8 @@ const Blog = () => {
 							4. Resource server then
 							verifies the authenticity of
 							the token using the secret
-							salt/ public key.
+							salt/ public key. <br />
+							5. Client stores the token on either localstorage or browser cookie And next time the client makes a request, a copy of the token is send to the server for authorization. Server verifies before giving the authorization. Then server  respons to the clients request. 
 						</p>
 					</div>
 				</div>

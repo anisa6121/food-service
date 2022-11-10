@@ -5,23 +5,35 @@ import Reviewtable from './Reviewtable';
 
 const Review = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const [review, setReview] = useState([]);
 
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allReviews?email=${user?.email}`)
+      fetch(`http://localhost:5000/allReviews?email=${user?.email}`, {
 
+	headers: {
+	authorization: `Bearer ${localStorage.getItem("ourService")}`,
+	},
+      })
+          
+          
+          .then((res) => {
+              if (res.status === 401 || res.status === 403) {
+                  logOut()
+              }
+              return  res.json();
+            })
 
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-            setReview(data);
-        })
-.catch(err => console.log(err))
+          
+			.then((data) => {
+				console.log(data);
+				setReview(data);
+			})
+			.catch((err) => console.log(err));
 
-    },[user?.email])
+    },[user?.email, logOut])
   
 	
     if (review.length === 0) {
@@ -37,11 +49,7 @@ const Review = () => {
 			fetch(`http://localhost:5000/allReviews/${id}`, {
 				method: "DELETE",
 
-				// headers: {
-				// 	authorization: `Bearer ${localStorage.getItem(
-				// 		"geniousToken"
-				// 	)}`,
-				// },
+	
 			})
 				.then((res) => res.json())
 				.then((data) => {

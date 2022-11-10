@@ -40,7 +40,28 @@ const Login = () => {
 				console.log(user);
 				form.reset();
 				setError("");
-				navigate(from, { replace: true });
+				
+// get TOKEN
+				const createUser = {
+					email: user.email
+				};
+				console.log(createUser);
+				fetch("http://localhost:5000/jwt", {
+					method: "POST",
+					headers: {
+						"content-type": "application/json",
+					},
+
+					body: JSON.stringify(createUser),
+				})
+
+          .then(res => res.json())
+	     .then(data => {
+			console.log(data);
+			localStorage.setItem("ourService", data.token);
+			navigate(from, { replace: true });
+		})
+
 			})
 
 			.catch((error) => {
@@ -48,9 +69,7 @@ const Login = () => {
 				setError(error.message);
 			})
 
-			// .finally(() => {
-			// 	setLoading(false);
-			// });
+			
 	};
 
 	// resset password

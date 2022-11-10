@@ -9,12 +9,15 @@ import Login from "../../components/Login/Login";
 import Registration from "../../components/Registration/Registration";
 import Review from "../../components/Review/Review";
 import Main from "../../Layout/Main";
+import ErrorPage from "../../SharedPage/ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <Main></Main>,
+		errorElement:<ErrorPage></ErrorPage>,
 		children: [
 			{
 				path: "/",
@@ -39,18 +42,27 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/review",
-				element: <Review></Review>,
-				
+				element: (
+					<PrivateRoute>
+						<Review></Review>
+					</PrivateRoute>
+				),
 			},
 			{
 				path: "/service",
-				element: <AddService></AddService>,
+				element: (
+					<PrivateRoute>
+						<AddService></AddService>
+					</PrivateRoute>
+				),
 			},
 			{
-		path: "/detailService/:id",
-		element: <FoodDetail></FoodDetail>,
-		loader: ({ params }) =>
-		fetch(`http://localhost:5000/allServices/${params.id}`),
+				path: "/detailService/:id",
+				element: <FoodDetail></FoodDetail>,
+				loader: ({ params }) =>
+					fetch(
+						`http://localhost:5000/allServices/${params.id}`
+					),
 			},
 			{
 				path: "/about",
