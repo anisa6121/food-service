@@ -13,9 +13,9 @@ const Review = () => {
     useEffect(() => {
       fetch(`http://localhost:5000/allReviews?email=${user?.email}`, {
 
-	headers: {
-	authorization: `Bearer ${localStorage.getItem("ourService")}`,
-	},
+	// headers: {
+	// authorization: `Bearer ${localStorage.getItem("ourService")}`,
+	// },
       })
           
           
@@ -49,7 +49,8 @@ const Review = () => {
 			fetch(`http://localhost:5000/allReviews/${id}`, {
 				method: "DELETE",
 
-	
+headers: {authorization: `Bearer ${localStorage.getItem("ourService")}`,
+			},
 			})
 				.then((res) => res.json())
 				.then((data) => {

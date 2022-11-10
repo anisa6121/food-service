@@ -5,19 +5,14 @@ import toast from "react-hot-toast";
 // import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import { setAuthToken } from "../../SharedPage/Token/Token";
 
 
 const Login = () => {
 	const [userEmail, setUserEmail] = useState("");
 
-  const { signIn, resetPassword } = useContext(AuthContext);
-	// const {
-	// 	signIn,
-	// 	resetPassword,
-	// 	providerLogin,
-	// 	signInWithGit,
-	// 	setLoading,
-	// } = useContext(AuthContext);
+  const { signIn, resetPassword, googleSignIn } = useContext(AuthContext);
+	
 
 	const [error, setError] = useState("");
 	const navigate = useNavigate();
@@ -86,7 +81,17 @@ const Login = () => {
 
 	// Google sign In
 
+	const handleGoogleSignIn = () => {
+		googleSignIn()
+			.then(result => {
+				const user = result.user
+				console.log(user)
+				setAuthToken(user)
 
+			})
+		
+		.catch(er => console.log(er))
+}
 
 
 
@@ -177,7 +182,7 @@ const Login = () => {
 
 			<div className="my-6 space-y-4">
 				<button
-					// onClick={handleGoogleSignIn}
+					onClick={handleGoogleSignIn}
 					aria-label="Login with Google"
 					type="button"
 					className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400"

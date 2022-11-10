@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import { setAuthToken } from '../../SharedPage/Token/Token';
 
 const Registration = () => {
     const [error, setError] = useState("");
@@ -25,7 +26,7 @@ const handleSubmit = (event) => {
             const user = result.user;
             
 			console.log(user);
-
+setAuthToken(user)
 			setError("");
 			form.reset();
 			navigate("/")
