@@ -22,11 +22,13 @@ const FoodDetail = () => {
 		const serviceReview = {
 			serviceId: _id,
 			serviceName: title,
+			Price:price,
 			email,
             review
 			
 			
 		};
+		console.log(serviceReview);
 
 
 		fetch("http://localhost:5000/reviews", {

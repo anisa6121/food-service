@@ -40,6 +40,7 @@ const router = createBrowserRouter([
 			{
 				path: "/review",
 				element: <Review></Review>,
+				
 			},
 			{
 				path: "/service",
