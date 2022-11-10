@@ -12,7 +12,6 @@ import Main from "../../Layout/Main";
 import ErrorPage from "../../SharedPage/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 
-
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -33,7 +32,7 @@ const router = createBrowserRouter([
 				element: <FoodDetail></FoodDetail>,
 				loader: ({ params }) =>
 					fetch(
-						`http://localhost:5000/allServices/${params.id}`
+						`https://services-server-beta.vercel.app/allServices/${params.id}`
 					),
 			},
 			{
@@ -69,7 +68,7 @@ const router = createBrowserRouter([
 				element: <FoodDetail></FoodDetail>,
 				loader: ({ params }) =>
 					fetch(
-						`http://localhost:5000/allServices/${params.id}`
+						`https://services-server-beta.vercel.app/allServices/${params.id}`
 					),
 			},
 			{
@@ -84,4 +83,4 @@ const router = createBrowserRouter([
 	},
 ]);
 
- export default router
+export default router;

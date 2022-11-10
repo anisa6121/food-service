@@ -5,14 +5,14 @@ import toast from "react-hot-toast";
 // import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 import { setAuthToken } from "../../SharedPage/Token/Token";
 
-
 const Login = () => {
+	useTitle("Login");
 	const [userEmail, setUserEmail] = useState("");
 
-  const { signIn, resetPassword, googleSignIn } = useContext(AuthContext);
-	
+	const { signIn, resetPassword, googleSignIn } = useContext(AuthContext);
 
 	const [error, setError] = useState("");
 	const navigate = useNavigate();
@@ -35,36 +35,39 @@ const Login = () => {
 				console.log(user);
 				form.reset();
 				setError("");
-				
-// get TOKEN
+
+				// get TOKEN
 				const createUser = {
-					email: user.email
+					email: user.email,
 				};
 				console.log(createUser);
-				fetch("http://localhost:5000/jwt", {
-					method: "POST",
-					headers: {
-						"content-type": "application/json",
-					},
+				fetch(
+					"https://services-server-beta.vercel.app/jwt",
+					{
+						method: "POST",
+						headers: {
+							"content-type":
+								"application/json",
+						},
 
-					body: JSON.stringify(createUser),
-				})
-
-          .then(res => res.json())
-	     .then(data => {
-			console.log(data);
-			localStorage.setItem("ourService", data.token);
-			navigate(from, { replace: true });
-		})
-
+						body: JSON.stringify(createUser),
+					}
+				)
+					.then((res) => res.json())
+					.then((data) => {
+						console.log(data);
+						localStorage.setItem(
+							"ourService",
+							data.token
+						);
+						navigate(from, { replace: true });
+					});
 			})
 
 			.catch((error) => {
 				console.log(error);
 				setError(error.message);
-			})
-
-			
+			});
 	};
 
 	// resset password
@@ -83,17 +86,14 @@ const Login = () => {
 
 	const handleGoogleSignIn = () => {
 		googleSignIn()
-			.then(result => {
-				const user = result.user
-				console.log(user)
-				setAuthToken(user)
-
+			.then((result) => {
+				const user = result.user;
+				console.log(user);
+				setAuthToken(user);
 			})
-		
-		.catch(er => console.log(er))
-}
 
-
+			.catch((er) => console.log(er));
+	};
 
 	return (
 		<div className="mx-auto mt-4 w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-gray-500 text-white mb-3">

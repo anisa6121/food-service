@@ -1,22 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import SingleService from './SingleService';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import SingleService from "./SingleService";
 
 const FoodService = () => {
-
 	const [foodServices, setFoodService] = useState([]);
-	
+
 	useEffect(() => {
-		fetch("http://localhost:5000/someServices")
+		fetch("https://services-server-beta.vercel.app/someServices")
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
 				setFoodService(data);
 			});
-		
 	}, []);
 
-    return (
+	return (
 		<div>
 			<div className="text-center m-7">
 				<p className="text-3xl font-bold text-orange-500">
@@ -48,7 +46,7 @@ const FoodService = () => {
 				</Link>
 			</div>
 		</div>
-    );
+	);
 };
 
 export default FoodService;

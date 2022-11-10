@@ -1,57 +1,62 @@
-import React, { useContext, useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
-import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-import Reviewtable from './Reviewtable';
+import React, { useContext, useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import useTitle from "../../hooks/useTitle";
+import Reviewtable from "./Reviewtable";
 
 const Review = () => {
+	useTitle("My Reviews");
+	const { user, logOut } = useContext(AuthContext);
+	const [review, setReview] = useState([]);
 
-    const { user, logOut } = useContext(AuthContext);
-    const [review, setReview] = useState([]);
+	useEffect(() => {
+		fetch(
+			`https://services-server-beta.vercel.app/allReviews?email=${user?.email}`,
+			{
+				// headers: {
+				// authorization: `Bearer ${localStorage.getItem("ourService")}`,
+				// },
+			}
+		)
+			.then((res) => {
+				if (res.status === 401 || res.status === 403) {
+					logOut();
+				}
+				return res.json();
+			})
 
-
-
-    useEffect(() => {
-      fetch(`http://localhost:5000/allReviews?email=${user?.email}`, {
-
-	// headers: {
-	// authorization: `Bearer ${localStorage.getItem("ourService")}`,
-	// },
-      })
-          
-          
-          .then((res) => {
-              if (res.status === 401 || res.status === 403) {
-                  logOut()
-              }
-              return  res.json();
-            })
-
-          
 			.then((data) => {
 				console.log(data);
 				setReview(data);
 			})
 			.catch((err) => console.log(err));
+	}, [user?.email, logOut]);
 
-    },[user?.email, logOut])
-  
-	
-    if (review.length === 0) {
-        return <h2 className="text-5xl m-24 text-center text-amber-400">No reviews were Found</h2>;
-		
-     }
-    
-  const handleDelete = (id) => {
+	if (review.length === 0) {
+		return (
+			<h2 className="text-5xl m-24 text-center text-amber-400">
+				No reviews were Found
+			</h2>
+		);
+	}
+
+	const handleDelete = (id) => {
 		const proceed = window.confirm(
 			"Are you sure, you want to cancel this order"
 		);
 		if (proceed) {
-			fetch(`http://localhost:5000/allReviews/${id}`, {
-				method: "DELETE",
+			fetch(
+				`https://services-server-beta.vercel.app/allReviews/${id}`,
+				{
+					method: "DELETE",
 
-headers: {authorization: `Bearer ${localStorage.getItem("ourService")}`,
-			},
-			})
+					headers: {
+						authorization: `Bearer ${localStorage.getItem(
+							"ourService"
+						)}`,
+					},
+				}
+			)
 				.then((res) => res.json())
 				.then((data) => {
 					console.log(data);
@@ -65,10 +70,9 @@ headers: {authorization: `Bearer ${localStorage.getItem("ourService")}`,
 					}
 				});
 		}
-  };
-	
+	};
 
-    return (
+	return (
 		<div>
 			<div className="overflow-x-auto w-full mb-24 ">
 				<table className="table w-full">
@@ -87,7 +91,9 @@ headers: {authorization: `Bearer ${localStorage.getItem("ourService")}`,
 					<tbody>
 						{review.map((oneReview) => (
 							<Reviewtable
-						handleDelete={handleDelete}
+								handleDelete={
+									handleDelete
+								}
 								key={oneReview._id}
 								oneReview={oneReview}
 							></Reviewtable>
@@ -96,7 +102,7 @@ headers: {authorization: `Bearer ${localStorage.getItem("ourService")}`,
 				</table>
 			</div>
 		</div>
-    );
+	);
 };
 
 export default Review;

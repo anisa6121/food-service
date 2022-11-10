@@ -1,43 +1,45 @@
-import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-import { setAuthToken } from '../../SharedPage/Token/Token';
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import useTitle from "../../hooks/useTitle";
+import { setAuthToken } from "../../SharedPage/Token/Token";
 
 const Registration = () => {
-    const [error, setError] = useState("");
+	useTitle("Registration");
+	const [error, setError] = useState("");
 
-const { createUser, updateUserProfile } = useContext(AuthContext);
+	const { createUser, updateUserProfile } = useContext(AuthContext);
 
-const navigate = useNavigate()	
-	
-const handleSubmit = (event) => {
-	event.preventDefault();
+	const navigate = useNavigate();
 
-	const form = event.target;
-	const name = form.name.value;
-	const photoURL = form.photoURL.value;
-	const email = form.email.value;
-	const password = form.password.value;
+	const handleSubmit = (event) => {
+		event.preventDefault();
 
-    console.log(name, photoURL, email, password);
-    
-	createUser(email, password)
-		.then((result) => {
-            const user = result.user;
-            
-			console.log(user);
-setAuthToken(user)
-			setError("");
-			form.reset();
-			navigate("/")
-			handleUserProfile(name, photoURL);
-		})
+		const form = event.target;
+		const name = form.name.value;
+		const photoURL = form.photoURL.value;
+		const email = form.email.value;
+		const password = form.password.value;
 
-		.catch((error) => {
-			console.log(error);
-			setError(error.message);
-		});
-};
+		console.log(name, photoURL, email, password);
+
+		createUser(email, password)
+			.then((result) => {
+				const user = result.user;
+
+				console.log(user);
+				setAuthToken(user);
+				setError("");
+				form.reset();
+				navigate("/");
+				handleUserProfile(name, photoURL);
+			})
+
+			.catch((error) => {
+				console.log(error);
+				setError(error.message);
+			});
+	};
 
 	const handleUserProfile = (name, photoURL) => {
 		const profile = {
@@ -49,7 +51,7 @@ setAuthToken(user)
 			.catch((e) => console.error(e));
 	};
 
-    return (
+	return (
 		<div className="mx-auto mt-3 mb-3 flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-200 text-black">
 			<div className="mb-8 text-center">
 				<h1 className="my-3 text-4xl font-bold">
@@ -161,8 +163,7 @@ setAuthToken(user)
 			</form>
 			<p className="text-lg font-bold text-red-500">{error}</p>
 		</div>
-    );
+	);
 };
 
 export default Registration;
-

@@ -1,59 +1,48 @@
-import React from 'react';
-import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
-
-
+import React from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 const AddService = () => {
+	useTitle("AddService");
+	const navigate = useNavigate();
+	const handleAddService = (event) => {
+		event.preventDefault();
 
-  const navigate = useNavigate()
-  const handleAddService = (event) => {
-    event.preventDefault();
+		const form = event.target;
+		const img = form.img.value;
 
+		const title = form.title.value;
 
-    const form = event.target;
-    const img = form.img.value;
+		const price = form.price.value;
 
-   
-    const title = form.title.value;
+		const description = form.description.value;
 
-    const price = form.price.value;
+		const service = { img, title, price, description };
+		console.log(service);
 
-    const description = form.description.value;
+		fetch("https://services-server-beta.vercel.app/allServices", {
+			method: "POST",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify(service),
+		})
+			.then((res) => res.json())
 
+			.then((data) => {
+				if (data.acknowledged) {
+					toast.success("Service Added Successfully");
+					console.log(data);
+					form.reset();
+					navigate("/allFood");
+				}
+			})
 
-    const service = { img, title, price, description };
-    console.log(service)
+			.catch((err) => console.error(err));
+	};
 
-
-    fetch("http://localhost:5000/allServices", {
-      method: "POST",
-      headers: {
-        'content-type' : 'application/json'
-      },
-      body: JSON.stringify(service)
-    })
-.then(res => res.json())
-
-      .then(data => {
-
-
-      if (data.acknowledged) {
-        toast.success("Service Added Successfully")
-        console.log(data);
-        form.reset()
-		navigate("/allFood");
-			
-		}
-       
-      })
-    
-    .catch(err => console.error(err))
-  }
-
-
-
-    return (
+	return (
 		<div className="mx-auto mt-3 mb-3 flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-200 text-black">
 			<form
 				onSubmit={handleAddService}
@@ -139,7 +128,7 @@ const AddService = () => {
 				</div>
 			</form>
 		</div>
-    );
+	);
 };
 
 export default AddService;

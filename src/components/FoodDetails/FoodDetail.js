@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 import RightSide from "./RightSide";
 
 const FoodDetail = () => {
+	useTitle("FoodDetails");
 	const { user } = useContext(AuthContext);
 	let { id } = useParams();
 
@@ -32,7 +34,7 @@ const FoodDetail = () => {
 		};
 		console.log(serviceReview);
 
-		fetch("http://localhost:5000/reviews", {
+		fetch("https://services-server-beta.vercel.app/reviews", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -55,7 +57,9 @@ const FoodDetail = () => {
 
 	useEffect(() => {
 		if (id) {
-			fetch(`http://localhost:5000/getallReviews/${id}`)
+			fetch(
+				`https://services-server-beta.vercel.app/getallReviews/${id}`
+			)
 				.then((res) => res.json())
 				.then((data) => {
 					setData(data);

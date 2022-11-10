@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const Reviewtable = ({ oneReview, handleDelete }) => {
 	const { serviceName, review, Price, serviceId, _id } = oneReview;
 
 	const [reviewService, setReviewService] = useState({});
 	useEffect(() => {
-		fetch(`http://localhost:5000/allServices/${serviceId}`)
+		fetch(
+			`https://services-server-beta.vercel.app/allServices/${serviceId}`
+		)
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);

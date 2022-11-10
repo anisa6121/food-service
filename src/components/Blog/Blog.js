@@ -1,6 +1,8 @@
 import React from "react";
+import useTitle from "../../hooks/useTitle";
 
 const Blog = () => {
+	useTitle("Blog");
 	return (
 		<>
 			<div className=" text-gray-100">
@@ -88,7 +90,15 @@ const Blog = () => {
 							verifies the authenticity of
 							the token using the secret
 							salt/ public key. <br />
-							5. Client stores the token on either localstorage or browser cookie And next time the client makes a request, a copy of the token is send to the server for authorization. Server verifies before giving the authorization. Then server  respons to the clients request. 
+							5. Client stores the token on
+							either localstorage or browser
+							cookie And next time the client
+							makes a request, a copy of the
+							token is send to the server for
+							authorization. Server verifies
+							before giving the
+							authorization. Then server
+							respons to the clients request.
 						</p>
 					</div>
 				</div>

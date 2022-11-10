@@ -1,10 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-
-import logo from '../../assets/logo.png'
+import logo from "../../assets/logo.png";
 const Footer = () => {
-    return (
+	return (
 		<footer className="mx-auto px-4 divide-y bg-red-700 text-gray-100">
 			<div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 				<div className="lg:w-1/3">
@@ -47,12 +46,12 @@ const Footer = () => {
 								Location: Shapla,
 								Sylhet:3200,
 							</p>
-                            <p>Bangladesh</p>
-                            
-                            <p>Phone: 017xxxxxxxx</p>
-                            <h2>
-                                Email: example@gmail.com
-                            </h2>
+							<p>Bangladesh</p>
+
+							<p>Phone: 017xxxxxxxx</p>
+							<h2>
+								Email: example@gmail.com
+							</h2>
 						</div>
 					</div>
 
@@ -125,7 +124,7 @@ const Footer = () => {
 				© 1968 Company Co. All rights reserved.
 			</div>
 		</footer>
-    );
+	);
 };
 
 export default Footer;
