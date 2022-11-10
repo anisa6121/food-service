@@ -17,7 +17,7 @@ const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <Main></Main>,
-		errorElement:<ErrorPage></ErrorPage>,
+		errorElement: <ErrorPage></ErrorPage>,
 		children: [
 			{
 				path: "/",
@@ -27,6 +27,14 @@ const router = createBrowserRouter([
 			{
 				path: "/home",
 				element: <Home></Home>,
+			},
+			{
+				path: "/detailService/:id",
+				element: <FoodDetail></FoodDetail>,
+				loader: ({ params }) =>
+					fetch(
+						`http://localhost:5000/allServices/${params.id}`
+					),
 			},
 			{
 				path: "/blog",
