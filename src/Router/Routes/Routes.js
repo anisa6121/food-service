@@ -19,43 +19,46 @@ const router = createBrowserRouter([
 			{
 				path: "/",
 				element: <Home></Home>,
-            },
-            {
-                path: "/detailService",
-                element:<FoodDetail></FoodDetail>
-            },
+			},
+
 			{
 				path: "/home",
 				element: <Home></Home>,
 			},
 			{
 				path: "/blog",
-				element: <Blog></Blog>
-            },
-            {
-                path: '/register',
-                element:<Registration></Registration>
-            },
-            {
-                path: "/login",
-                element:<Login></Login>
-            },
-            {
-                path: '/review',
-                element:<Review></Review>
-            },
-            {
-                path: '/service',
-                element:<AddService></AddService>
-            },
-            {
-                path: '/about',
-                element:<About></About>
-            },
-            {
-                path: '/allFood',
-                element:<AllService></AllService>
-            }
+				element: <Blog></Blog>,
+			},
+			{
+				path: "/register",
+				element: <Registration></Registration>,
+			},
+			{
+				path: "/login",
+				element: <Login></Login>,
+			},
+			{
+				path: "/review",
+				element: <Review></Review>,
+			},
+			{
+				path: "/service",
+				element: <AddService></AddService>,
+			},
+			{
+		path: "/detailService/:id",
+		element: <FoodDetail></FoodDetail>,
+		loader: ({ params }) =>
+		fetch(`http://localhost:5000/allServices/${params.id}`),
+			},
+			{
+				path: "/about",
+				element: <About></About>,
+			},
+			{
+				path: "/allFood",
+				element: <AllService></AllService>,
+			},
 		],
 	},
 ]);

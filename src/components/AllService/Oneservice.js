@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Oneservice = ({singleFood}) => {
-     const { title, price, img, description } = singleFood; ;
+     const { title, price, img, description ,_id} = singleFood; ;
      return (
 		<div className=" p-6 rounded-md shadow-md bg-white text-black">
 			<img
@@ -27,7 +27,7 @@ const Oneservice = ({singleFood}) => {
 						<div className="card-actions justify-end">
 							<Link
 								className="btn btn-primary"
-								to="/detailService"
+								to={`/detailService/${_id}`}
 							>
 								Details
 							</Link>

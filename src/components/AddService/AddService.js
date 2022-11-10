@@ -121,7 +121,7 @@ const AddService = () => {
 							required
 							type="text"
 							name="description"
-							className="textarea textarea-secondary"
+							className="textarea textarea-secondary w-full"
 							placeholder="Description"
 						></textarea>
 					</div>
