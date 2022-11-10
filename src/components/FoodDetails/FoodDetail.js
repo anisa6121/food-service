@@ -34,7 +34,7 @@ const FoodDetail = () => {
 		};
 		console.log(serviceReview);
 
-		fetch("https://services-server-beta.vercel.app/reviews", {
+		fetch("https://services-server-anisa6121.vercel.app/reviews", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -58,7 +58,7 @@ const FoodDetail = () => {
 	useEffect(() => {
 		if (id) {
 			fetch(
-				`https://services-server-beta.vercel.app/getallReviews/${id}`
+				`https://services-server-anisa6121.vercel.app/getallReviews/${id}`
 			)
 				.then((res) => res.json())
 				.then((data) => {

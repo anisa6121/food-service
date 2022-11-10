@@ -8,7 +8,7 @@ const AllService = () => {
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-		fetch("https://services-server-beta.vercel.app/allServices")
+		fetch("https://services-server-anisa6121.vercel.app/allServices")
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);

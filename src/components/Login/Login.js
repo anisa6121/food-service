@@ -42,7 +42,7 @@ const Login = () => {
 				};
 				console.log(createUser);
 				fetch(
-					"https://services-server-beta.vercel.app/jwt",
+					"https://services-server-anisa6121.vercel.app/jwt",
 					{
 						method: "POST",
 						headers: {

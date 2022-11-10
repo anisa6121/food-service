@@ -6,7 +6,7 @@ const Reviewtable = ({ oneReview, handleDelete }) => {
 	const [reviewService, setReviewService] = useState({});
 	useEffect(() => {
 		fetch(
-			`https://services-server-beta.vercel.app/allServices/${serviceId}`
+			`https://services-server-anisa6121.vercel.app/allServices/${serviceId}`
 		)
 			.then((res) => res.json())
 			.then((data) => {

@@ -21,13 +21,16 @@ const AddService = () => {
 		const service = { img, title, price, description };
 		console.log(service);
 
-		fetch("https://services-server-beta.vercel.app/allServices", {
-			method: "POST",
-			headers: {
-				"content-type": "application/json",
-			},
-			body: JSON.stringify(service),
-		})
+		fetch(
+			"https://services-server-anisa6121.vercel.app/allServices",
+			{
+				method: "POST",
+				headers: {
+					"content-type": "application/json",
+				},
+				body: JSON.stringify(service),
+			}
+		)
 			.then((res) => res.json())
 
 			.then((data) => {

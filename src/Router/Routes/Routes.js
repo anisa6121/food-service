@@ -32,7 +32,7 @@ const router = createBrowserRouter([
 				element: <FoodDetail></FoodDetail>,
 				loader: ({ params }) =>
 					fetch(
-						`https://services-server-beta.vercel.app/allServices/${params.id}`
+						`https://services-server-anisa6121.vercel.app/allServices/${params.id}`
 					),
 			},
 			{
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
 				element: <FoodDetail></FoodDetail>,
 				loader: ({ params }) =>
 					fetch(
-						`https://services-server-beta.vercel.app/allServices/${params.id}`
+						`https://services-server-anisa6121.vercel.app/allServices/${params.id}`
 					),
 			},
 			{

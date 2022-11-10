@@ -3,7 +3,7 @@ export const setAuthToken = (user) => {
 		email: user.email,
 	};
 
-	fetch("https://services-server-beta.vercel.app/jwt", {
+	fetch("https://services-server-anisa6121.vercel.app/jwt", {
 		method: "POST",
 		headers: {
 			"content-type": "application/json",

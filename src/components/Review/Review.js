@@ -11,7 +11,7 @@ const Review = () => {
 
 	useEffect(() => {
 		fetch(
-			`https://services-server-beta.vercel.app/allReviews?email=${user?.email}`,
+			`https://services-server-anisa6121.vercel.app/allReviews?email=${user?.email}`,
 			{
 				// headers: {
 				// authorization: `Bearer ${localStorage.getItem("ourService")}`,
@@ -46,7 +46,7 @@ const Review = () => {
 		);
 		if (proceed) {
 			fetch(
-				`https://services-server-beta.vercel.app/allReviews/${id}`,
+				`https://services-server-anisa6121.vercel.app/allReviews/${id}`,
 				{
 					method: "DELETE",
 
