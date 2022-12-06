@@ -3,7 +3,7 @@ import React from "react";
 import img3 from "../../assets/img3.jpg";
 import useTitle from "../../hooks/useTitle";
 const About = () => {
-	useTitle("About Us");
+	useTitle("About Us"); 
 	return (
 		<section className="text-gray-600 body-font">
 			<div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
