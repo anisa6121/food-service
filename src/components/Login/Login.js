@@ -1,4 +1,4 @@
-import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
+
 import React, { useState } from "react";
 import { useContext } from "react";
 import toast from "react-hot-toast";
@@ -60,7 +60,7 @@ const Login = () => {
 							"ourService",
 							data.token
 						);
-						navigate(from, { replace: true });
+						navigate(from,{replace:true});
 					});
 			})
 

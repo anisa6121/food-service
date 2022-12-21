@@ -46,7 +46,7 @@ const AddService = () => {
 	};
 
 	return (
-		<div className="mx-auto mt-3 mb-3 flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-200 text-black">
+		<div className="mx-auto mt-3 mb-3 flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-white shadow-lg text-black">
 			<form
 				onSubmit={handleAddService}
 				noValidate=""
@@ -66,7 +66,7 @@ const AddService = () => {
 						name="img"
 						id="img"
 						placeholder="Enter Service Photo"
-						className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900"
+						className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-white text-black"
 						data-temp-mail-org="0"
 					/>
 				</div>
@@ -85,7 +85,7 @@ const AddService = () => {
 							name="title"
 							id="title"
 							placeholder="Service Name"
-							className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900"
+							className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-white text-black"
 							data-temp-mail-org="0"
 						/>
 					</div>
@@ -103,7 +103,7 @@ const AddService = () => {
 							name="price"
 							id="price"
 							placeholder="Enter Price"
-							className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900"
+							className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-white text-black"
 							data-temp-mail-org="0"
 						/>
 					</div>

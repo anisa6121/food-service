@@ -8,6 +8,7 @@ import RightSide from "./RightSide";
 const FoodDetail = () => {
 	useTitle("FoodDetails");
 	const { user } = useContext(AuthContext);
+	
 	let { id } = useParams();
 
 	const navigate = useNavigate();

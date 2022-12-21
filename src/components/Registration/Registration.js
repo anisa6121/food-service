@@ -149,7 +149,7 @@ const Registration = () => {
 				</div>
 
 				<div className="flex justify-between">
-					<p className="text-sm">
+					<p className="text-xl">
 						Already have an account
 					</p>
 
