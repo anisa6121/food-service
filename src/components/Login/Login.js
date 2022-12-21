@@ -96,21 +96,11 @@ const Login = () => {
 	};
 
 	return (
-		<div className="mx-auto mt-4 w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-gray-500 text-white mb-3">
+		<div className="mx-auto mt-4 w-full max-w-md p-4 rounded-md shadow sm:p-8 bg-white text-black mb-3">
 			<h2 className="mb-3 text-3xl font-semibold text-center">
-				Login In
+				Login
 			</h2>
 
-			<div className="flex justify-between">
-				<p className="text-sm">New to this Website</p>
-
-				<Link
-					to="/register"
-					className="text-xs hover:underline mb-3"
-				>
-					Please Register
-				</Link>
-			</div>
 			<form
 				onSubmit={handleSubmit}
 				noValidate=""
@@ -138,19 +128,26 @@ const Login = () => {
 							name="email"
 							id="email"
 							placeholder="Enter Your Email"
-							className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900"
+							className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-white text-black"
 							data-temp-mail-org="0"
 						/>
 					</div>
 
 					<div className="space-y-2">
+						<label
+							for="email"
+							className="block text-sm"
+						>
+							Password
+						</label>
+
 						<input
 							required
 							type="password"
 							name="password"
 							id="password"
 							placeholder="Enter Password"
-							className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900"
+							className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-white text-black"
 							data-temp-mail-org="0"
 						/>
 					</div>
@@ -196,6 +193,17 @@ const Login = () => {
 					</svg>
 					<p>Login with Google</p>
 				</button>
+			</div>
+
+			<div className="flex justify-between">
+				<p className="text-sm">New to this Website</p>
+
+				<Link
+					to="/register"
+					className="text-xs hover:underline mb-3"
+				>
+					Please Register
+				</Link>
 			</div>
 
 			<p className="text-lg font-bold text-black">{error}</p>

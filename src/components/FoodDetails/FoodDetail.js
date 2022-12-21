@@ -116,7 +116,7 @@ const FoodDetail = () => {
 										</>
 									) : (
 										<>
-											<h1 className="text-2xl font-bold">
+											<h1 className="text-black text-xl font-bold">
 												Please
 												Login.
 												And
@@ -124,7 +124,7 @@ const FoodDetail = () => {
 												a
 												Review
 												<br />
-												<span className="text-xl text-blue-700">
+												<span className="hover:underline text-xl text-blue-700">
 													<Link to="/login">
 														Login
 													</Link>

@@ -52,7 +52,7 @@ const Registration = () => {
 	};
 
 	return (
-		<div className="mx-auto mt-3 mb-3 flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-200 text-black">
+		<div className="mx-auto mt-3 mb-3 flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-white shadow-lg text-black">
 			<div className="mb-8 text-center">
 				<h1 className="my-3 text-4xl font-bold">
 					Register
@@ -79,7 +79,7 @@ const Registration = () => {
 							name="name"
 							id="name"
 							placeholder="Enter Your Name Here"
-							className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900"
+							className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-white text-black"
 							data-temp-mail-org="0"
 						/>
 					</div>
@@ -96,7 +96,7 @@ const Registration = () => {
 							name="email"
 							id="email"
 							placeholder="Enter Your Email Here"
-							className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900"
+							className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-white text-black"
 							data-temp-mail-org="0"
 						/>
 					</div>
@@ -115,7 +115,7 @@ const Registration = () => {
 							name="password"
 							id="password"
 							placeholder="Enter your password"
-							className="w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-200 focus:border-gray-900 text-gray-900"
+							className="w-full px-3 py-2 border rounded-md border-gray-300 bg-white focus:border-gray-900 text-black"
 						/>
 					</div>
 
@@ -132,7 +132,7 @@ const Registration = () => {
 							name="photoURL"
 							id="photoURL"
 							placeholder="Enter Your Photo"
-							className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900"
+							className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-white text-black"
 							data-temp-mail-org="0"
 						/>
 					</div>
