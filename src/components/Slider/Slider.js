@@ -15,10 +15,10 @@ const Slider = () => {
 				/>
 
 				<div className="absolute flex justify-center w-full transform -translate-y-1/2 top-3/4">
-					<div className="p-4 text-center lg:text-5xl md:text-5xl sm:text-4xl text-lime-400 font-bold">
+					<div className="p-4 text-center lg:text-5xl md:text-5xl sm:text-4xl text-black font-bold">
 						Our Special Dish
 						<br />
-						<p className="text-blue-700 text-3xl mt-7">
+						<p className="text-lime-500 text-3xl  mt-7">
 							Fried Chiken
 						</p>
 					</div>
@@ -41,10 +41,10 @@ const Slider = () => {
 				/>
 
 				<div className="absolute flex justify-center w-full transform -translate-y-1/2 top-3/4">
-					<div className="p-4 text-center lg:text-5xl md:text-5xl sm:text-4xl  text-lime-400 font-bold">
+					<div className="p-4 text-center lg:text-5xl md:text-5xl sm:text-4xl  text-black font-bold">
 						Our Special Dish
 						<br />
-						<p className="text-blue-700 text-3xl mt-7">
+						<p className="text-lime-500 text-3xl mt-7">
 							Beef Pizza
 						</p>
 					</div>
@@ -67,10 +67,10 @@ const Slider = () => {
 				/>
 
 				<div className="absolute flex justify-center w-full transform -translate-y-1/2 top-3/4">
-					<div className="p-4 text-center lg:text-5xl md:text-5xl sm:text-4xl  text-lime-400 font-bold">
+					<div className="p-4 text-center lg:text-5xl md:text-5xl sm:text-4xl  text-black font-bold">
 						Our Special Dish
 						<br />
-						<p className="text-blue-700 text-3xl mt-7">
+						<p className="text-lime-500 text-3xl mt-7">
 							Chiken Kabab
 						</p>
 					</div>

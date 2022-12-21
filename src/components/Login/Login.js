@@ -59,8 +59,10 @@ const Login = () => {
 						localStorage.setItem(
 							"ourService",
 							data.token
+
 						);
-						navigate(from,{replace:true});
+						navigate(from, { replace: true });
+						
 					});
 			})
 
